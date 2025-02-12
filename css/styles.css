@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #e7bc0f;
+    padding: 15px;
+}
+
+/* search bar */
+#search-section {
+    margin: 20px 0;
+}
+
+/* pokemon information */
+#pokemon-info {
+    margin: 20px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 15px;
+}
