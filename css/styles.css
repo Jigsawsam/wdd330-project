@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #2a2a2a;
 }
 
 header {
@@ -18,9 +18,10 @@ header {
 #pokemon-info {
     margin: 20px;
     padding: 10px;
-    background: white;
+    background: rgb(0, 0, 0);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: aliceblue;
 }
 
 #card-showcase {
@@ -29,12 +30,13 @@ header {
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+    color: aliceblue
 }
 
 
 .card {
     width: 200px;
-    background: white;
+    background: rgb(0, 0, 0);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -44,11 +46,50 @@ header {
 .card img {
     width: 100%;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Popup card */
+.card-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-content img {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 10px;
+}
+
+.close-popup {
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+    color: aliceblue
 }
 
 /* Footer */
 footer {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
     margin-top: auto;
