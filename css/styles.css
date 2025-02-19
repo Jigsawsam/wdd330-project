@@ -56,6 +56,13 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transform: scale(1.1);
 }
 
 .card img {
@@ -93,13 +100,106 @@ header {
 }
 
 .close-popup {
+    border-radius: 20%;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: rgb(0, 0, 0);
     position: absolute;
     top: -20px;
     right: 15px;
-    font-size: 24px;
+    font-size: 25px;
     cursor: pointer;
     color: black;
     color: aliceblue
+}
+
+/* Favorites */
+#favorites-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    border-top: 2px solid #ffcc00;
+    padding-top: 10px;
+    color: aliceblue
+}
+
+#favorites-container .card {
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    text-align: center;
+}
+
+#view-favorites {
+    background: radial-gradient(circle, #ffcc00 30%, #a07e00 70%);
+    border: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+    outline: none;
+}
+
+#view-favorites:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 204, 0, 0.8); 
+    transform: scale(1.05);
+}
+
+#view-favorites:active {
+    box-shadow: 0 0 15px 8px rgba(255, 204, 0, 1); 
+    transform: scale(0.95);
+}
+
+.favorite-btn{
+    cursor: pointer;
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 24px;
+}
+
+.favorite-btn .star {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.favorite-btn:hover .star{
+    animation: jump 0.5s ease-in-out infinite alternate;
+}
+
+.favorite-btn:active .star {
+    animation: none;
+    transform: scale(1.5);
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+.remove-favorite-btn{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-0.5px, -0.5px) rotate(-0.25deg); }
+    20% { transform: translate(0.5px, 0.5px) rotate(0.25deg); }
+    30% { transform: translate(-1px, 0) rotate(-0.25deg); }
+    40% { transform: translate(1px, 0) rotate(0.25deg); }
+    50% { transform: translate(-0.5px, 0.5px) rotate(-0.25deg); }
+    60% { transform: translate(0.5px, -0.5px) rotate(0.25deg); }
+    70% { transform: translate(-0.5px, -0.25px) rotate(-0.25deg); }
+    80% { transform: translate(0.5px, 0.25px) rotate(0.25deg); }
+    90% { transform: translate(-0.5px, 0) rotate(-0.25deg); }
+    100% { transform: translate(0, 0); }
+}
+
+.remove-favorite-btn:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 }
 
 /* Footer */
