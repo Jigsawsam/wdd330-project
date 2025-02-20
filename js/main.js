@@ -13,7 +13,6 @@ const favoritesButton = document.getElementById('view-favorites');
 const favoritesContainer = document.getElementById('favorites-container');
 
 // toggle saved cards
-let favoritesVisible = false;
 favoritesButton.addEventListener('click', () => {
     favoritesVisible = !favoritesVisible;
     if (favoritesVisible) {
