@@ -2,12 +2,27 @@ import { getPokemonInfo } from './fetchPokemon.mjs';
 import { getPokemonCards } from './fetchPokemonCards.mjs';
 import { displayPokemonInfo } from './displayPokemonInfo.mjs';
 import { displayPokemonCards } from './displayPokemonCards.mjs';
+import { loadFavorites } from './favorites.mjs';
 
 // get DOM elements
 const searchButton = document.getElementById('search-button');
 const pokemonInput = document.getElementById('pokemon-input');
 const pokemonInfoContainer = document.getElementById('pokemon-info');
 const cardShowcaseContainer = document.getElementById('card-showcase');
+const favoritesButton = document.getElementById('view-favorites');
+const favoritesContainer = document.getElementById('favorites-container');
+
+// toggle saved cards
+let favoritesVisible = false;
+favoritesButton.addEventListener('click', () => {
+    favoritesVisible = !favoritesVisible;
+    if (favoritesVisible) {
+        loadFavorites(favoritesContainer, displayPokemonCards);
+        favoritesContainer.style.display = 'flex';
+    } else {
+        favoritesContainer.style.display = 'none';
+    }
+});
 
 // function search pokemon
 async function searchPokemon() {
